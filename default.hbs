@@ -14,36 +14,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.cyborg.min.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
-    {{! insert font link here
-    	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
-  	}}
+    
+    <link href='http://fonts.googleapis.com/css?family=Gudea:400,700,400italic|Droid+Sans+Mono|Share+Tech+Mono|Gruppo|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+    *{font-family:'Roboto Condensed', Arial, sans-serif}
+    </style>
 
   	{{! Ghost outputs important style and meta data with this tag }}
   	{{ghost_head}}
+    <link rel="shortcut icon" href="/img/blogfavicon.ico">
 </head>
 <body class="{{body_class}}">
 
-	{{! Everything else gets inserted here }}
-  <div class="container">
-	  {{{body}}}
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}} &nbsp; &nbsp;<span class="blog-description text-muted">{{@blog.description}}</span></a>
 
-    <div class="row">
-      <div class="col-lg-12">
-      	<footer class="site-footer">
-          <div class="row">
-            <div class="col-lg-12">
-            	<a href="{{@blog.url}}/rss/"><span class="glyphicon glyphicon-plane"></span> Subscribe</a>
-            	<div class="text-muted">
-              	<section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
-                <section class="poweredby">Proudly published with <a href="http://ghost.org">Ghost</a></section>
-              </div>
-            </div>
-          </div>
-        </footer>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {{!-- <li><a href="#about">About</a></li> --}}
+            {{!-- <li><a href="#contact">Contact</a></li> --}}
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
+
+
+	{{! Everything else gets inserted here }}
+  <div class="container width-limit">
+    {{!-- <div class="row">
+      <div class="col-md-6">
+        <h5 class="blog-description text-muted">{{@blog.description}}</h5>
+      </div>
+    </div> --}}
+    <div class="row">
+      <div class="col-md-9">
+        {{{body}}}
+      </div>
+      
+      <div class="col-md-3">
+        <a href="{{@blog.url}}">Bob Patterson Jr</a>
+        <p><i class="fa fa-terminal"></i> Database Engineer @ Tumblr
+        <br/><i class="fa fa-medkit"></i> Very Allergic Guy</p>
+        <a href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i> Subscribe</a>
+        <br/>
+        <div>
+          <a id="twitter" href="http://www.twitter.com/bobpattersonjr">
+          <img src="/img/twitter.png" alt="Follow bobpattersonjr on Twitter"></a> 
+        </div>
+        <br/>
+        <iframe height='454' width='200' frameborder='0' allowtransparency='true' scrolling='no' src='http://app.strava.com/athletes/786255/latest-rides/dfb03b3f3fb441df60844f7dbde03132727c9577'></iframe>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-lg-12">
+        </div>
+      </div>
+    </footer>
+
   </div>
 
   {{! Ghost outputs important scripts and data with this tag }}
@@ -52,6 +95,7 @@
   {{! The main JavaScript file for Boo }}
   <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/assets/js/index.js"></script>
+  <script src="http://platform.tumblr.com/v1/share.js"></script>
 
 </body>
 </html>
